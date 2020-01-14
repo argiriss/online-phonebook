@@ -1,6 +1,10 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+<%= paginate @members %>
+
 <% @members.each do |member|%>
   <%= render 'members_list', member: member %>
 <% end %>
+
+<%= paginate @members %>

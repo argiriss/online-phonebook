@@ -34,3 +34,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise', '~> 4.2'
 gem 'acts_as_paranoid', '~> 0.6.2'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
