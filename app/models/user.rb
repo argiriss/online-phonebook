@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
   acts_as_paranoid
+
+  scope :members, -> { where.not(confirmed_at: nil) }
 end
