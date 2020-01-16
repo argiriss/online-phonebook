@@ -41,6 +41,15 @@
     <%= form.text_field :user_id %>
   </div>
 
+  <div>
+    <%= form.fields_for :addresses do |address_form| %>
+      <%= render "address_fields", form: address_form %>
+    <% end %>
+    <div>
+      <%= link_to_add_association "Add Address", form, :addresses %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -5,6 +5,7 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
   acts_as_paranoid
+  has_one :contact_detail, dependent: :destroy
 
   scope :members, -> { where.not(confirmed_at: nil) }
   scope :featured, -> { where(featured: true) }

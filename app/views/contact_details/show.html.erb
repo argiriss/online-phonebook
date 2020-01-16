@@ -30,5 +30,16 @@
   <%= @contact_detail.user %>
 </p>
 
+<h2> Addresses: </h2>
+
+<% @contact_detail.addresses.each do |t| %>
+  <p> <%= t.name %> </p>
+  <p> <%= t.street_name %> </p>
+  <p> <%= t.street_number %> </p>
+  <p> <%= t.city %> </p>
+  <p> <%= t.country %> </p>
+  <p> <%= t.postal_code %> </p>
+<% end %>
+
 <%= link_to 'Edit', edit_contact_detail_path(@contact_detail) %> |
 <%= link_to 'Back', contact_details_path %>
