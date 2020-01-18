@@ -41,5 +41,5 @@
   <p> <%= t.postal_code %> </p>
 <% end %>
 
-<%= link_to 'Edit', edit_contact_detail_path(@contact_detail) %> |
+<%= link_to 'Edit', edit_contact_detail_path(@contact_detail) if logged_in?(:site_admin) || current_user.id == @contact_detail.user_id %> |
 <%= link_to 'Back', contact_details_path %>

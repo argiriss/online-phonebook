@@ -1,5 +1,7 @@
 class ContactDetailsController < ApplicationController
   before_action :set_contact_detail, only: [:show, :edit, :update, :destroy]
+  access user: {except: [:destroy, :edit, :update, :new, :create]}, admin: :all
+  before_action :authenticate_user!, only: [:show]
 
   # GET /contact_details
   # GET /contact_details.json
