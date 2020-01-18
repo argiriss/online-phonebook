@@ -1,20 +1,20 @@
-<div>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+<div class="nested-fields">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-  <%= form.label :street_name %>
-  <%= form.text_field :street_name %>
+  <%= f.label :street_name %>
+  <%= f.text_field :street_name %>
 
-  <%= form.label :street_number %>
-  <%= form.text_field :street_number %>
+  <%= f.label :street_number %>
+  <%= f.text_field :street_number %>
 
-  <%= form.label :city %>
-  <%= form.text_field :city %>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
 
-  <%= form.label :country %>
-  <%= form.text_field :country %>
+  <%= f.label :country %>
+  <%= f.text_field :country %>
 
-  <%= form.label :postal_code %>
-  <%= form.text_field :postal_code %>
-  <%= link_to_remove_association "Remove Address", form %>
+  <%= f.label :postal_code %>
+  <%= f.text_field :postal_code %>
+  <%= link_to_remove_association "Remove Address", f %>
 </div>
