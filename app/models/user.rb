@@ -8,7 +8,7 @@ class User < ApplicationRecord
   ############################################################################################ 
  
 
-  before_validation :custom_validation, if: :more_than_five_featured_members?
+  validate :must_have_at_most_five_featured
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable, :trackable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
@@ -24,8 +24,7 @@ class User < ApplicationRecord
   end
 
   private 
-  def custom_validation
-    errors.add :user, "Featured members can not be more than 5"
-    false  
+  def must_have_at_most_five_featured
+    errors.add :user, "Featured members can not be more than 5" if more_than_five_featured_members?
   end
 end

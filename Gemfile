@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry', '~> 0.12.2'
 end
 
 group :development do
@@ -30,13 +30,10 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 gem 'devise', '~> 4.2'
 gem 'devise_invitable', '~> 2.0', '>= 2.0.1'
 gem 'acts_as_paranoid', '~> 0.6.2'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
-gem 'pry', '~> 0.12.2'
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 gem 'jquery-rails'
