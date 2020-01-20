@@ -31,6 +31,26 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <% if logged_in?(:site_admin) %>
+    <%= f.label :featured %>
+    <%= f.checkbox_field :featured %>
+  <% end %>
+
+  <div>
+    <%= f.fields_for :contact_detail do |contact_detail|%>
+      <%= render "contact_detail_fields", f: contact_detail %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.fields_for :addresses do |address_form| %>
+      <%= render "address_fields", f: address_form %>
+    <% end %>
+    <div>
+      <%= link_to_add_association "Add Address", f, :addresses %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
