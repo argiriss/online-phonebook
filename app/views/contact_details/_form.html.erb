@@ -36,17 +36,6 @@
     <%= f.number_field :mobile %>
   </div>
 
-  <%= f.hidden_field :user_id , value: current_user.id %>
-
-  <div>
-    <%= f.fields_for :addresses do |address_form| %>
-      <%= render "address_fields", f: address_form %>
-    <% end %>
-    <div>
-      <%= link_to_add_association "Add Address", f, :addresses %>
-    </div>
-  </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>

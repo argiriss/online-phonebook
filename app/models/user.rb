@@ -7,15 +7,25 @@ class User < ApplicationRecord
   petergate(roles: [:admin], multiple: false)                                      ##
   ############################################################################################ 
  
-
   validate :must_have_at_most_five_featured
+  validates_presence_of :contact_detail, :addresses
+
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable, :trackable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
-  acts_as_paranoid
-  has_one :contact_detail, dependent: :destroy
 
+  acts_as_paranoid
+
+  has_one :contact_detail
+  has_many :addresses, dependent: :destroy
+
+  accepts_nested_attributes_for :addresses, 
+                                allow_destroy: true
+
+  accepts_nested_attributes_for :contact_detail,
+                                allow_destroy: true
+  
   scope :members, -> { where.not(confirmed_at: nil) }
   scope :featured, -> { where(featured: true) }
 

@@ -25,21 +25,10 @@
   <%= @contact_detail.mobile %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @contact_detail.user %>
-</p>
-
 <h2> Addresses: </h2>
-
-<% @contact_detail.addresses.each do |t| %>
-  <p> <%= t.name %> </p>
-  <p> <%= t.street_name %> </p>
-  <p> <%= t.street_number %> </p>
-  <p> <%= t.city %> </p>
-  <p> <%= t.country %> </p>
-  <p> <%= t.postal_code %> </p>
+<% @contact_detail.user.addresses.each do |address| %>
+  <%= render "addresses/address", address: address %>
 <% end %>
 
-<%= link_to 'Edit', edit_contact_detail_path(@contact_detail) if logged_in?(:site_admin) || current_user.id == @contact_detail.user_id %> |
+<%= link_to 'Edit', edit_contact_detail_path(@contact_detail) if logged_in?(:site_admin) || current_user.id == @contact_detail.user_id %> 
 <%= link_to 'Back', contact_details_path %>
