@@ -1,6 +1,12 @@
 <% if current_user.present? %>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  <li class="nav-item">
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
+  </li>
 <% else %>
-  <%= link_to "Register", new_user_registration_path %>
-  <%= link_to "Login", new_user_session_path %>
+  <li class="nav-item">
+    <%= link_to "Register", new_user_registration_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+  </li>
 <% end %>

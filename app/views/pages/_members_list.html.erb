@@ -1,2 +1,10 @@
-<%= member.email %>
-<%= link_to "Member's contact details", member.contact_detail %>
+<div class="col-md-4">
+  <div class="card">
+    <img class="card-img-top" src="<%= image_path("profile.png") %>" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title"><%= "#{member.contact_detail.first_name} #{member.contact_detail.last_name}" %></h4>
+      <p class="card-text"><%= "#{member.contact_detail.description}" %></p>
+      <%= link_to "View contact details", member.contact_detail, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
