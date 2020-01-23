@@ -33,6 +33,10 @@ class User < ApplicationRecord
     User.featured.size > 5
   end
 
+  def full_name
+    contact_detail.first_name + " " + contact_detail.last_name
+  end
+
   private 
   def must_have_at_most_five_featured
     errors.add :user, "Featured members can not be more than 5" if more_than_five_featured_members?

@@ -1,32 +1,40 @@
-<p>
-  <strong>First name:</strong>
-  <%= @contact_detail.first_name %>
-</p>
+<h1 class="text-center"><%= @contact_detail.user.full_name %></h1>
+<div class="row">
+  <div class="col-md-6">
+    <h2> Contact Details </h2>
+    <p>
+      <strong>First name:</strong>
+      <%= @contact_detail.first_name %>
+    </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @contact_detail.last_name %>
-</p>
+    <p>
+      <strong>Last name:</strong>
+      <%= @contact_detail.last_name %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @contact_detail.description %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @contact_detail.description %>
+    </p>
 
-<p>
-  <strong>Telephone:</strong>
-  <%= @contact_detail.telephone %>
-</p>
+    <p>
+      <strong>Telephone:</strong>
+      <%= @contact_detail.telephone %>
+    </p>
 
-<p>
-  <strong>Mobile:</strong>
-  <%= @contact_detail.mobile %>
-</p>
+    <p>
+      <strong>Mobile:</strong>
+      <%= @contact_detail.mobile %>
+    </p>
+  </div>
 
-<h2> Addresses: </h2>
-<% @contact_detail.user.addresses.each do |address| %>
-  <%= render "addresses/address", address: address %>
-<% end %>
+  <div class="col-md-6">
+    <h2> Addresses </h2>
+    <% @contact_detail.user.addresses.each do |address| %>
+      <%= render "addresses/address", address: address %>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to 'Edit Profile', edit_user_registration_url if logged_in?(:site_admin) || current_user.id == @contact_detail.user_id %>
 <%= link_to 'Edit', edit_contact_detail_path(@contact_detail) if logged_in?(:site_admin) || current_user.id == @contact_detail.user_id %> 
