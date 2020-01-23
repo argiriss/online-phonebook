@@ -13,6 +13,11 @@
     </p>
 
     <p>
+      <strong>Email:</strong>
+      <%= @contact_detail.user.email %>
+    </p>
+
+    <p>
       <strong>Description:</strong>
       <%= @contact_detail.description %>
     </p>
@@ -36,6 +41,6 @@
   </div>
 </div>
 
-<%= link_to 'Edit Profile', edit_user_registration_url if logged_in?(:site_admin) || current_user.id == @contact_detail.user_id %>
-<%= link_to 'Edit', edit_contact_detail_path(@contact_detail) if logged_in?(:site_admin) || current_user.id == @contact_detail.user_id %> 
+<%= link_to 'Edit Profile', edit_user_registration_path(@contact_detail.user) if logged_in?(:admin) || current_user.id == @contact_detail.user_id %>
+<%= link_to 'Edit', edit_contact_detail_path(@contact_detail) if logged_in?(:admin) || current_user.id == @contact_detail.user_id %>
 <%= link_to 'Back', contact_details_path %>
