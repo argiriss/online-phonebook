@@ -1,13 +1,9 @@
 <div class="container">
-  <div class="row">
-    <%= paginate @members %>
-  </div>
+  <%= render 'pagination', members: @members %>
   <div class="row">
     <% @members.each do |member|%>
       <%= render 'members_list', member: member %>
     <% end %>
   </div>
-  <div class="row">
-    <%= paginate @members %>
-  </div>
+  <%= render 'pagination', members: @members %>
 </div>
