@@ -41,6 +41,5 @@
   </div>
 </div>
 
-<%= link_to 'Edit Profile', edit_user_registration_path(@contact_detail.user) if logged_in?(:admin) || current_user.id == @contact_detail.user_id %>
-<%= link_to 'Edit', edit_contact_detail_path(@contact_detail) if logged_in?(:admin) || current_user.id == @contact_detail.user_id %>
-<%= link_to 'Back', contact_details_path %>
+<%= link_to 'Edit Profile', edit_user_path(@contact_detail.user) if logged_in?(:admin) || current_user.id == @contact_detail.user_id %>
+<%= link_to 'Back', :back %>

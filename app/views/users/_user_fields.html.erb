@@ -1,0 +1,14 @@
+<div>
+  <%= f.fields_for :contact_detail do |contact_detail|%>
+    <%= render "contact_detail_fields", f: contact_detail %>
+  <% end %>
+</div>
+
+<div>
+  <%= f.fields_for :addresses do |address_form| %>
+    <%= render "address_fields", f: address_form %>
+  <% end %>
+  <div>
+    <%= link_to_add_association "Add Address", f, :addresses %>
+  </div>
+</div>

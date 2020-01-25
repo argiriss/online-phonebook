@@ -17,8 +17,8 @@ class User < ApplicationRecord
 
   acts_as_paranoid
 
-  has_one :contact_detail
-  has_many :addresses, dependent: :destroy
+  has_one :contact_detail, dependent: :destroy
+  has_many :addresses, dependent: :delete_all
 
   accepts_nested_attributes_for :addresses, 
                                 allow_destroy: true
