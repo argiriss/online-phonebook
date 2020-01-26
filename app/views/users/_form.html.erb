@@ -22,8 +22,8 @@
 
   <%= render "user_fields", f: f %>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
 
@@ -31,4 +31,4 @@
 
 <h3>Cancel account</h3>
 
-<p>Unhappy? <%= button_to "Cancel account", registration_path(user), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= button_to "Cancel account", registration_path(user), class: "btn btn-primary", data: { confirm: "Are you sure?" }, method: :delete %></p>
