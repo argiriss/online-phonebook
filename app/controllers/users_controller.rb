@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       redirect_to root_path, notice: 'User was successfully updated.'
-      sign_in(@user, bypass: true)
+      sign_in(current_user, bypass: true)
     else
       render :edit
     end
