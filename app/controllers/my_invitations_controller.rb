@@ -1,13 +1,12 @@
 class MyInvitationsController < Devise::InvitationsController
   before_action :update_sanitized_params, only: :update
-
-  def edit
-    super do |user|
-      user.build_contact_detail
-    end
-  end
+  before_action :build_contact_detail, only: :edit
 
   protected
+
+  def build_contact_detail
+    resource.build_contact_detail
+  end
 
   def update_sanitized_params
     devise_parameter_sanitizer.permit(:accept_invitation, keys: [addresses_attributes: [:id, :street_name, :street_number, :city, :country, :postal_code, :name],
