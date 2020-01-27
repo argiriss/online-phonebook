@@ -27,8 +27,6 @@
   </div>
 <% end %>
 
-<%= link_to "Edit password", edit_user_password_path(user) %>
-
 <h3>Cancel account</h3>
 
 <p>Unhappy? <%= button_to "Cancel account", registration_path(user), class: "btn btn-primary", data: { confirm: "Are you sure?" }, method: :delete %></p>
