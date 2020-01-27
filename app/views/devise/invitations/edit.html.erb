@@ -14,6 +14,22 @@
     </div>
   <% end %>
 
+  <div>
+    <%= f.fields_for :contact_detail do |contact_detail|%>
+      <%= render "users/contact_detail_fields", f: contact_detail %>
+    <% end %>
+  </div>
+
+  <div>
+    <h2> Addresses </h2>
+    <%= f.fields_for :addresses do |address_form| %>
+      <%= render "users/address_fields", f: address_form %>
+    <% end %>
+    <div>
+      <%= link_to_add_association "Add Address", f, :addresses, partial: "users/address_fields" %>
+    </div>
+  </div>
+
   <div class="form-group">
     <%= f.submit t("devise.invitations.edit.submit_button"), class: "btn btn-primary" %>
   </div>
