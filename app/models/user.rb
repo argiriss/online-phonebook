@@ -39,6 +39,9 @@ class User < ApplicationRecord
 
   private 
   def must_have_at_most_five_featured
-    errors.add :user, "Featured members can not be more than 5" if more_than_five_featured_members?
+    count_self_featured = self.featured? ? 1 : 0
+    if (User.featured.where.not(id: self).size + count_self_featured) > 5
+      errors.add :user, "Featured members can not be more than 5"
+    end
   end
 end
