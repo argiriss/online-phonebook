@@ -13,6 +13,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'pry', '~> 0.12.2'
+  gem 'rspec-rails', '~> 3.9'
+end
+
+group :test do
+  gem 'rspec-rails', '~> 3.9'
+  gem 'shoulda-matchers', '~> 4.2'
 end
 
 group :development do
