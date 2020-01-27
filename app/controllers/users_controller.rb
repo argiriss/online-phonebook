@@ -21,6 +21,6 @@ class UsersController < ApplicationController
 
     def user_params
       params[:user].permit(:id, :email, :featured, [addresses_attributes: [:id, :street_name, :street_number, :city, :country, :postal_code, :name, :_destroy],
-        contact_detail_attributes: [:first_name, :last_name, :description, :telephone, :mobile ]])
+        contact_detail_attributes: [:id, :first_name, :last_name, :description, :telephone, :mobile ]])
     end
 end

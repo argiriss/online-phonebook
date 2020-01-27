@@ -56,7 +56,6 @@ class ContactDetailsController < ApplicationController
                                              :last_name, 
                                              :description, 
                                              :telephone, 
-                                             :mobile, 
-                                             addresses_attributes: [:id, :street_name, :street_number, :city, :country, :postal_code, :name, :_destroy])
+                                             :mobile)
     end
 end
