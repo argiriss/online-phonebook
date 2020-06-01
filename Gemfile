@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
-gem 'rails', '~> 5.2.3'
+gem 'rails', '>= 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.12.3'
 gem 'sass-rails', '~> 5.0'
@@ -28,8 +28,13 @@ gem 'devise', '~> 4.2'
 gem 'devise_invitable', '~> 2.0', '>= 2.0.1'
 gem 'acts_as_paranoid', '~> 0.6.2'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
-gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem "kaminari", ">= 1.2.1"
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.4.1'
 gem 'nokogiri', '1.10.8'
+
+gem "activesupport", ">= 5.2.4.3"
+gem "actionpack", ">= 5.2.4.3"
+gem "activestorage", ">= 5.2.4.3"
+gem "actionview", ">= 5.2.4.2"
