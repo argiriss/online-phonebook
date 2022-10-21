@@ -32,7 +32,7 @@ gem "kaminari", ">= 1.2.1"
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.4.1'
-gem 'nokogiri', '1.13.6'
+gem 'nokogiri', '1.13.9'
 
 gem "activesupport", ">= 5.2.4.3"
 gem "actionpack", ">= 5.2.4.3"
